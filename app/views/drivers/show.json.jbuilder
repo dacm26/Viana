@@ -1,1 +1,1 @@
-json.extract! @driver, :id, :name, :age, :gender, :address, :email, :mobile, :id_bus, :created_at, :updated_at
+json.extract! @driver, :id, :name, :age, :gender, :address, :email, :mobile, :salary,:id_bus, :created_at, :updated_at

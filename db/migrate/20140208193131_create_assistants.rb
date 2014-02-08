@@ -7,6 +7,7 @@ class CreateAssistants < ActiveRecord::Migration
       t.text :address
       t.string :email
       t.integer :mobile
+      t.decimal :salary
       t.integer :id_bus
 
       t.timestamps

@@ -36,6 +36,10 @@
     <%= f.telephone_field :mobile %>
   </div>
   <div class="field">
+    <%= f.label :salary %><br>
+    <%= f.text_field :salary, :value => (number_to_currency(f.object.salary, :precision => 2) || 0) %>
+  </div>
+  <div class="field">
     <%= f.label :id_terminal %><br>
     <%= f.select :id_terminal, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
   </div>

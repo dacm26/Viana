@@ -7,6 +7,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.text :address
       t.string :email
       t.integer :mobile
+      t.decimal :salary
       t.integer :id_terminal
 
       t.timestamps

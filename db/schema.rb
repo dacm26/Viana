@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140208200301) do
     t.text     "address"
     t.string   "email"
     t.integer  "mobile"
+    t.decimal  "salary",     precision: 10, scale: 0
     t.integer  "id_bus"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140208200301) do
     t.text     "address"
     t.string   "email"
     t.integer  "mobile"
+    t.decimal  "salary",     precision: 10, scale: 0
     t.integer  "id_bus"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -83,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140208200301) do
     t.text     "address"
     t.string   "email"
     t.integer  "mobile"
+    t.decimal  "salary",      precision: 10, scale: 0
     t.integer  "id_terminal"
     t.datetime "created_at"
     t.datetime "updated_at"
