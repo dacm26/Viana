@@ -1,4 +1,8 @@
 Viana::Application.routes.draw do
+  resources :voyages
+
+  resources :itineraries
+
   resources :employees
 
   resources :assistants

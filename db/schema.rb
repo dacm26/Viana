@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208200301) do
+ActiveRecord::Schema.define(version: 20140208221441) do
 
   create_table "assistants", force: true do |t|
     t.string   "name"
@@ -93,6 +93,17 @@ ActiveRecord::Schema.define(version: 20140208200301) do
 
   add_index "employees", ["id_terminal"], name: "index_employees_on_id_terminal", using: :btree
 
+  create_table "itineraries", force: true do |t|
+    t.string   "info"
+    t.time     "departure_time"
+    t.time     "arrival_time"
+    t.integer  "id_bus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "itineraries", ["id_bus"], name: "index_itineraries_on_id_bus", using: :btree
+
   create_table "seatcategories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -113,5 +124,15 @@ ActiveRecord::Schema.define(version: 20140208200301) do
   add_index "tickets", ["destiny_city"], name: "index_tickets_on_destiny_city", using: :btree
   add_index "tickets", ["origin_city"], name: "index_tickets_on_origin_city", using: :btree
   add_index "tickets", ["seat_category"], name: "index_tickets_on_seat_category", using: :btree
+
+  create_table "voyages", force: true do |t|
+    t.date     "v_date"
+    t.integer  "id_itinerary"
+    t.integer  "seats"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "voyages", ["id_itinerary"], name: "index_voyages_on_id_itinerary", using: :btree
 
 end

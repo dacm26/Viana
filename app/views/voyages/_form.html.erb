@@ -1,0 +1,29 @@
+<%= form_for(@voyage) do |f| %>
+  <% if @voyage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@voyage.errors.count, "error") %> prohibited this voyage from being saved:</h2>
+
+      <ul>
+      <% @voyage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :v_date %><br>
+    <%= f.date_select :v_date %>
+  </div>
+  <div class="field">
+    <%= f.label :id_itinerary %><br>
+    <%= f.select :id_itinerary, options_for_select(Itinerary.all.map{|s|[s.info,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :seats %><br>
+    <%= f.number_field :seats, :value => 34, :readonly => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

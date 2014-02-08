@@ -3,6 +3,7 @@ class Bus < ActiveRecord::Base
   has_many :cities
   belongs_to :driver
   belongs_to :assistant
+  belongs_to :itinerary
   def create_name
     origin=City.find(origin_city)
     destiny=City.find(destiny_city)

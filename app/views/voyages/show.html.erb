@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>V date:</strong>
+  <%= @voyage.v_date %>
+</p>
+
+<p>
+  <strong>Id itinerary:</strong>
+  <%= @voyage.id_itinerary %>
+</p>
+
+<p>
+  <strong>Seats:</strong>
+  <%= @voyage.seats %>
+</p>
+
+<%= link_to 'Edit', edit_voyage_path(@voyage) %> |
+<%= link_to 'Back', voyages_path %>

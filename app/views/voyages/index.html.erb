@@ -1,0 +1,31 @@
+<h1>Listing voyages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>V date</th>
+      <th>Id itinerary</th>
+      <th>Seats</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @voyages.each do |voyage| %>
+      <tr>
+        <td><%= voyage.v_date %></td>
+        <td><%= voyage.id_itinerary %></td>
+        <td><%= voyage.seats %></td>
+        <td><%= link_to 'Show', voyage %></td>
+        <td><%= link_to 'Edit', edit_voyage_path(voyage) %></td>
+        <td><%= link_to 'Destroy', voyage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Voyage', new_voyage_path %>

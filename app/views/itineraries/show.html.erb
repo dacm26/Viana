@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @itinerary.departure_time %>
+</p>
+
+<p>
+  <strong>Arrival time:</strong>
+  <%= @itinerary.arrival_time %>
+</p>
+
+<p>
+  <strong>Id bus:</strong>
+  <%= @itinerary.id_bus %>
+</p>
+
+<%= link_to 'Edit', edit_itinerary_path(@itinerary) %> |
+<%= link_to 'Back', itineraries_path %>
