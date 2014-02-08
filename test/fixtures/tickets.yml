@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  seat_category: 1
+  customer_category: 1
+  origin_city: 1
+  destiny_city: 1
+  price: 
+
+two:
+  seat_category: 1
+  customer_category: 1
+  origin_city: 1
+  destiny_city: 1
+  price: 

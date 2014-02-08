@@ -1,0 +1,37 @@
+<%= form_for(@ticket) do |f| %>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% @ticket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :seat_category %><br>
+    <%= f.select :seat_category, options_for_select(Seatcategory.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_category %><br>
+    <%= f.select :customer_category, options_for_select(Customercategory.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :origin_city %><br>
+    <%= f.select :origin_city, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :destiny_city %><br>
+    <%= f.select :destiny_city, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, :value => (number_to_currency(f.object.price, :precision => 2) || 0) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

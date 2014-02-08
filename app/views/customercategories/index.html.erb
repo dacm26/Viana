@@ -1,0 +1,27 @@
+<h1>Listing customercategories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customercategories.each do |customercategory| %>
+      <tr>
+        <td><%= customercategory.name %></td>
+        <td><%= link_to 'Show', customercategory %></td>
+        <td><%= link_to 'Edit', edit_customercategory_path(customercategory) %></td>
+        <td><%= link_to 'Destroy', customercategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customercategory', new_customercategory_path %>
