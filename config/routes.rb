@@ -1,4 +1,6 @@
 Viana::Application.routes.draw do
+  resources :customers
+
   resources :tickets
 
   resources :seatcategories
