@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208192442) do
+ActiveRecord::Schema.define(version: 20140208200301) do
+
+  create_table "assistants", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "gender"
+    t.text     "address"
+    t.string   "email"
+    t.integer  "mobile"
+    t.integer  "id_bus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assistants", ["id_bus"], name: "index_assistants_on_id_bus", using: :btree
 
   create_table "buses", force: true do |t|
     t.string   "name"
@@ -61,6 +75,20 @@ ActiveRecord::Schema.define(version: 20140208192442) do
   end
 
   add_index "drivers", ["id_bus"], name: "index_drivers_on_id_bus", using: :btree
+
+  create_table "employees", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "gender"
+    t.text     "address"
+    t.string   "email"
+    t.integer  "mobile"
+    t.integer  "id_terminal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "employees", ["id_terminal"], name: "index_employees_on_id_terminal", using: :btree
 
   create_table "seatcategories", force: true do |t|
     t.string   "name"

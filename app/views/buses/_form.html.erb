@@ -1,0 +1,29 @@
+<%= form_for(@bus) do |f| %>
+  <% if @bus.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bus.errors.count, "error") %> prohibited this bus from being saved:</h2>
+
+      <ul>
+      <% @bus.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :capacity %><br>
+    <%= f.number_field :capacity %>
+  </div>
+  <div class="field">
+    <%= f.label :origin_city %><br>
+    <%= f.select :origin_city, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :destiny_city %><br>
+    <%= f.select :destiny_city, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
