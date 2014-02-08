@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208190357) do
+ActiveRecord::Schema.define(version: 20140208192442) do
+
+  create_table "buses", force: true do |t|
+    t.string   "name"
+    t.integer  "capacity"
+    t.integer  "origin_city"
+    t.integer  "destiny_city"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "buses", ["destiny_city"], name: "index_buses_on_destiny_city", using: :btree
+  add_index "buses", ["origin_city"], name: "index_buses_on_origin_city", using: :btree
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -35,6 +47,20 @@ ActiveRecord::Schema.define(version: 20140208190357) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "drivers", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.string   "gender"
+    t.text     "address"
+    t.string   "email"
+    t.integer  "mobile"
+    t.integer  "id_bus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "drivers", ["id_bus"], name: "index_drivers_on_id_bus", using: :btree
 
   create_table "seatcategories", force: true do |t|
     t.string   "name"

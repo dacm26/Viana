@@ -1,4 +1,8 @@
 Viana::Application.routes.draw do
+  resources :drivers
+
+  resources :buses
+
   resources :customers
 
   resources :tickets
