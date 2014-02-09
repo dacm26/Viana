@@ -1,6 +1,7 @@
 class CreateTickets < ActiveRecord::Migration
   def change
     create_table :tickets do |t|
+      t.string :info
       t.integer :seat_category
       t.integer :customer_category
       t.integer :origin_city

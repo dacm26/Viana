@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  weight: 9.99
+  id_employee: 1
+  origin_customer: 1
+  destiny_customer: 1
+  voyage_id: 1
+  price: 9.99
+
+two:
+  weight: 9.99
+  id_employee: 1
+  origin_customer: 1
+  destiny_customer: 1
+  voyage_id: 1
+  price: 9.99

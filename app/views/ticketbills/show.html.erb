@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id ticket:</strong>
+  <%= @ticketbill.id_ticket %>
+</p>
+
+<p>
+  <strong>Id customer:</strong>
+  <%= @ticketbill.id_customer %>
+</p>
+
+<p>
+  <strong>Id employee:</strong>
+  <%= @ticketbill.id_employee %>
+</p>
+
+<p>
+  <strong>Itinerary:</strong>
+  <%= @ticketbill.itinerary_id %>
+</p>
+
+<p>
+  <strong>Departure date:</strong>
+  <%= @ticketbill.departure_date %>
+</p>
+
+<%= link_to 'Edit', edit_ticketbill_path(@ticketbill) %> |
+<%= link_to 'Back', ticketbills_path %>

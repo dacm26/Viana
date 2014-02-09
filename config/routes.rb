@@ -1,4 +1,8 @@
 Viana::Application.routes.draw do
+  resources :ticketbills
+
+  resources :packages
+
   resources :voyages
 
   resources :itineraries
@@ -21,7 +25,7 @@ Viana::Application.routes.draw do
 
   resources :cities
 
-  root 'tickets#index'
+  root 'ticketbills#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

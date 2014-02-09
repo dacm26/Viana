@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id_ticket: 1
+  id_customer: 1
+  id_employee: 1
+  itinerary_id: 1
+  departure_date: 2014-02-08
+
+two:
+  id_ticket: 1
+  id_customer: 1
+  id_employee: 1
+  itinerary_id: 1
+  departure_date: 2014-02-08

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208221441) do
+ActiveRecord::Schema.define(version: 20140208231725) do
 
   create_table "assistants", force: true do |t|
     t.string   "name"
@@ -104,13 +104,45 @@ ActiveRecord::Schema.define(version: 20140208221441) do
 
   add_index "itineraries", ["id_bus"], name: "index_itineraries_on_id_bus", using: :btree
 
+  create_table "packages", force: true do |t|
+    t.decimal  "weight",           precision: 10, scale: 0
+    t.integer  "id_employee"
+    t.integer  "origin_customer"
+    t.integer  "destiny_customer"
+    t.integer  "id_itinerary"
+    t.decimal  "price",            precision: 10, scale: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "packages", ["destiny_customer"], name: "index_packages_on_destiny_customer", using: :btree
+  add_index "packages", ["id_employee"], name: "index_packages_on_id_employee", using: :btree
+  add_index "packages", ["id_itinerary"], name: "index_packages_on_id_itinerary", using: :btree
+  add_index "packages", ["origin_customer"], name: "index_packages_on_origin_customer", using: :btree
+
   create_table "seatcategories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "ticketbills", force: true do |t|
+    t.integer  "id_ticket"
+    t.integer  "id_customer"
+    t.integer  "id_employee"
+    t.integer  "itinerary_id"
+    t.date     "departure_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ticketbills", ["id_customer"], name: "index_ticketbills_on_id_customer", using: :btree
+  add_index "ticketbills", ["id_employee"], name: "index_ticketbills_on_id_employee", using: :btree
+  add_index "ticketbills", ["id_ticket"], name: "index_ticketbills_on_id_ticket", using: :btree
+  add_index "ticketbills", ["itinerary_id"], name: "index_ticketbills_on_itinerary_id", using: :btree
+
   create_table "tickets", force: true do |t|
+    t.string   "info"
     t.integer  "seat_category"
     t.integer  "customer_category"
     t.integer  "origin_city"

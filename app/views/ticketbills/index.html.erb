@@ -1,0 +1,35 @@
+<h1>Listing ticketbills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id ticket</th>
+      <th>Id customer</th>
+      <th>Id employee</th>
+      <th>Itinerary</th>
+      <th>Departure date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ticketbills.each do |ticketbill| %>
+      <tr>
+        <td><%= ticketbill.id_ticket %></td>
+        <td><%= ticketbill.id_customer %></td>
+        <td><%= ticketbill.id_employee %></td>
+        <td><%= ticketbill.itinerary_id %></td>
+        <td><%= ticketbill.departure_date %></td>
+        <td><%= link_to 'Show', ticketbill %></td>
+        <td><%= link_to 'Edit', edit_ticketbill_path(ticketbill) %></td>
+        <td><%= link_to 'Destroy', ticketbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ticketbill', new_ticketbill_path %>

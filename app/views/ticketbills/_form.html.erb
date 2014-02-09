@@ -1,0 +1,36 @@
+<%= form_for(@ticketbill) do |f| %>
+  <% if @ticketbill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticketbill.errors.count, "error") %> prohibited this ticketbill from being saved:</h2>
+
+      <ul>
+      <% @ticketbill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_ticket %><br>
+    <%= f.select :id_ticket, options_for_select(Ticket.all.map{|s|[s.info,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :id_customer %><br>
+    <%= f.select :id_customer, options_for_select(Customer.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :id_employee %><br>
+    <%= f.select :id_employee, options_for_select(Employee.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :itinerary_id %><br>
+    <%= f.select :itinerary_id, options_for_select(Itinerary.all.map{|s|[s.info,s.id]}) %>  </div>
+  <div class="field">
+    <%= f.label :departure_date %><br>
+    <%= f.date_select :departure_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
