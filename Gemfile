@@ -6,6 +6,12 @@ gem 'rails', '4.0.0'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 
+# Use for attr_accessibe
+gem 'protected_attributes'
+
+#devise for authentication
+gem 'devise', '3.0.0.rc'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
