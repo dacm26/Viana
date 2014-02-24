@@ -20,10 +20,6 @@
     <%= f.select :id_customer, options_for_select(User.all.map{|s|[s.name,s.email]}) %>
   </div>
   <div class="field">
-    <%= f.label :id_employee %><br>
-    <%= f.select :id_employee, options_for_select(Employee.all.map{|s|[s.name,s.id]}) %>
-  </div>
-  <div class="field">
     <%= f.label :itinerary_id %><br>
     <%= f.select :itinerary_id, options_for_select(Itinerary.all.map{|s|[s.info,s.id]}) %>  </div>
   <div class="field">

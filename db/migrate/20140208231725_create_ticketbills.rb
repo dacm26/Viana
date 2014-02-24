@@ -3,7 +3,6 @@ class CreateTicketbills < ActiveRecord::Migration
     create_table :ticketbills do |t|
       t.integer :id_ticket
       t.string :id_customer
-      t.integer :id_employee
       t.integer :itinerary_id
       t.date :departure_date
 
@@ -11,7 +10,6 @@ class CreateTicketbills < ActiveRecord::Migration
     end
     add_index :ticketbills, :id_ticket
     add_index :ticketbills, :id_customer
-    add_index :ticketbills, :id_employee
     add_index :ticketbills, :itinerary_id
   end
 end

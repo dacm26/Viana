@@ -62,21 +62,6 @@ ActiveRecord::Schema.define(version: 20140223213103) do
 
   add_index "drivers", ["id_bus"], name: "index_drivers_on_id_bus", using: :btree
 
-  create_table "employees", force: true do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "gender"
-    t.text     "address"
-    t.string   "email"
-    t.integer  "mobile"
-    t.decimal  "salary",      precision: 10, scale: 0
-    t.integer  "id_terminal"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "employees", ["id_terminal"], name: "index_employees_on_id_terminal", using: :btree
-
   create_table "itineraries", force: true do |t|
     t.string   "info"
     t.time     "departure_time"
@@ -87,7 +72,6 @@ ActiveRecord::Schema.define(version: 20140223213103) do
 
   create_table "packages", force: true do |t|
     t.decimal  "weight",           precision: 10, scale: 0
-    t.integer  "id_employee"
     t.string   "origin_customer"
     t.string   "destiny_customer"
     t.integer  "id_itinerary"
@@ -97,7 +81,6 @@ ActiveRecord::Schema.define(version: 20140223213103) do
   end
 
   add_index "packages", ["destiny_customer"], name: "index_packages_on_destiny_customer", using: :btree
-  add_index "packages", ["id_employee"], name: "index_packages_on_id_employee", using: :btree
   add_index "packages", ["id_itinerary"], name: "index_packages_on_id_itinerary", using: :btree
   add_index "packages", ["origin_customer"], name: "index_packages_on_origin_customer", using: :btree
 
@@ -110,7 +93,6 @@ ActiveRecord::Schema.define(version: 20140223213103) do
   create_table "ticketbills", force: true do |t|
     t.integer  "id_ticket"
     t.string   "id_customer"
-    t.integer  "id_employee"
     t.integer  "itinerary_id"
     t.date     "departure_date"
     t.datetime "created_at"
@@ -118,7 +100,6 @@ ActiveRecord::Schema.define(version: 20140223213103) do
   end
 
   add_index "ticketbills", ["id_customer"], name: "index_ticketbills_on_id_customer", using: :btree
-  add_index "ticketbills", ["id_employee"], name: "index_ticketbills_on_id_employee", using: :btree
   add_index "ticketbills", ["id_ticket"], name: "index_ticketbills_on_id_ticket", using: :btree
   add_index "ticketbills", ["itinerary_id"], name: "index_ticketbills_on_itinerary_id", using: :btree
 

@@ -11,8 +11,6 @@ Viana::Application.routes.draw do
 
   resources :itineraries
 
-  resources :employees
-
   resources :assistants
 
   resources :drivers
