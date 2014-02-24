@@ -41,7 +41,7 @@
   </div>
   <div class="field">
     <%= f.label :id_bus %><br>
-    <%= f.select :id_bus, options_for_select(Bus.all.map{|s|[s.name,s.id]}) %>
+    <%= f.select :id_bus, options_for_select(Bus.all.map{|s|[s.plate,s.id]}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -5,7 +5,6 @@
     <tr>
       <th>Departure time</th>
       <th>Arrival time</th>
-      <th>Id bus</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,7 +16,6 @@
       <tr>
         <td><%= itinerary.departure_time %></td>
         <td><%= itinerary.arrival_time %></td>
-        <td><%= itinerary.id_bus %></td>
         <td><%= link_to 'Show', itinerary %></td>
         <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
         <td><%= link_to 'Destroy', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>

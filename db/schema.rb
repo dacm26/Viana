@@ -29,16 +29,11 @@ ActiveRecord::Schema.define(version: 20140223213103) do
   add_index "assistants", ["id_bus"], name: "index_assistants_on_id_bus", using: :btree
 
   create_table "buses", force: true do |t|
-    t.string   "name"
+    t.string   "plate"
     t.integer  "capacity"
-    t.integer  "origin_city"
-    t.integer  "destiny_city"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "buses", ["destiny_city"], name: "index_buses_on_destiny_city", using: :btree
-  add_index "buses", ["origin_city"], name: "index_buses_on_origin_city", using: :btree
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -86,12 +81,9 @@ ActiveRecord::Schema.define(version: 20140223213103) do
     t.string   "info"
     t.time     "departure_time"
     t.time     "arrival_time"
-    t.integer  "id_bus"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "itineraries", ["id_bus"], name: "index_itineraries_on_id_bus", using: :btree
 
   create_table "packages", force: true do |t|
     t.decimal  "weight",           precision: 10, scale: 0
@@ -174,10 +166,12 @@ ActiveRecord::Schema.define(version: 20140223213103) do
     t.date     "v_date"
     t.integer  "id_itinerary"
     t.integer  "seats"
+    t.integer  "id_bus"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "voyages", ["id_bus"], name: "index_voyages_on_id_bus", using: :btree
   add_index "voyages", ["id_itinerary"], name: "index_voyages_on_id_itinerary", using: :btree
 
 end

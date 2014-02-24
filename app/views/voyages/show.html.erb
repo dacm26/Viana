@@ -15,5 +15,11 @@
   <%= @voyage.seats %>
 </p>
 
+<p>
+  <strong>Bus:</strong>
+  <%= @voyage.id_bus %>
+</p>
+
+
 <%= link_to 'Edit', edit_voyage_path(@voyage) %> |
 <%= link_to 'Back', voyages_path %>

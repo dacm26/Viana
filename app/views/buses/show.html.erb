@@ -1,24 +1,15 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @bus.name %>
+  <strong>Plate:</strong>
+  <%= @bus.plate %>
 </p>
+
 
 <p>
   <strong>Capacity:</strong>
   <%= @bus.capacity %>
 </p>
 
-<p>
-  <strong>Origin city:</strong>
-  <%= @bus.origin_city %>
-</p>
-
-<p>
-  <strong>Destiny city:</strong>
-  <%= @bus.destiny_city %>
-</p>
 
 <%= link_to 'Edit', edit_bus_path(@bus) %> |
 <%= link_to 'Back', buses_path %>

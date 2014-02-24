@@ -3,10 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Plate</th>
       <th>Capacity</th>
-      <th>Origin city</th>
-      <th>Destiny city</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,10 +14,8 @@
   <tbody>
     <% @buses.each do |bus| %>
       <tr>
-        <td><%= bus.name %></td>
+        <td><%= bus.plate %></td>
         <td><%= bus.capacity %></td>
-        <td><%= bus.origin_city %></td>
-        <td><%= bus.destiny_city %></td>
         <td><%= link_to 'Show', bus %></td>
         <td><%= link_to 'Edit', edit_bus_path(bus) %></td>
         <td><%= link_to 'Destroy', bus, method: :delete, data: { confirm: 'Are you sure?' } %></td>

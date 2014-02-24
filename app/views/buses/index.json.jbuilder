@@ -1,4 +1,4 @@
 json.array!(@buses) do |bus|
-  json.extract! bus, :id, :name, :capacity, :origin_city, :destiny_city
+  json.extract! bus, :id, :plate, :capacity
   json.url bus_url(bus, format: :json)
 end

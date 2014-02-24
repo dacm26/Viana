@@ -10,18 +10,14 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= f.label :plate %><br>
+    <%= f.text_field :plate %>
+  </div>
 
   <div class="field">
     <%= f.label :capacity %><br>
     <%= f.number_field :capacity %>
-  </div>
-  <div class="field">
-    <%= f.label :origin_city %><br>
-    <%= f.select :origin_city, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
-  </div>
-  <div class="field">
-    <%= f.label :destiny_city %><br>
-    <%= f.select :destiny_city, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

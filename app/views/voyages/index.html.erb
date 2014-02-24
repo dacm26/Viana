@@ -6,6 +6,7 @@
       <th>V date</th>
       <th>Id itinerary</th>
       <th>Seats</th>
+      <th>Bus</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,6 +19,7 @@
         <td><%= voyage.v_date %></td>
         <td><%= voyage.id_itinerary %></td>
         <td><%= voyage.seats %></td>
+        <td><%= voyage.id_bus %></td>
         <td><%= link_to 'Show', voyage %></td>
         <td><%= link_to 'Edit', edit_voyage_path(voyage) %></td>
         <td><%= link_to 'Destroy', voyage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
