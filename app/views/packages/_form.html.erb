@@ -21,11 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :origin_customer %><br>
-    <%= f.select :origin_customer, options_for_select(Customer.all.map{|s|[s.name,s.id]}) %>
+    <%= f.select :origin_customer, options_for_select(User.all.map{|s|[s.name,s.email]}) %>
   </div>
   <div class="field">
     <%= f.label :destiny_customer %><br>
-    <%= f.select :destiny_customer, options_for_select(Customer.all.map{|s|[s.name,s.id]}) %>
+    <%= f.select :destiny_customer, options_for_select(User.all.map{|s|[s.name,s.email]}) %>
   </div>
   <div class="field">
     <%= f.label :id_itinerary %><br>

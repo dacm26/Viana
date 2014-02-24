@@ -2,7 +2,7 @@ class CreateTicketbills < ActiveRecord::Migration
   def change
     create_table :ticketbills do |t|
       t.integer :id_ticket
-      t.integer :id_customer
+      t.string :id_customer
       t.integer :id_employee
       t.integer :itinerary_id
       t.date :departure_date

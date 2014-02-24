@@ -3,8 +3,8 @@ class CreatePackages < ActiveRecord::Migration
     create_table :packages do |t|
       t.decimal :weight
       t.integer :id_employee
-      t.integer :origin_customer
-      t.integer :destiny_customer
+      t.string :origin_customer
+      t.string :destiny_customer
       t.integer :id_itinerary
       t.decimal :price
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223193840) do
+ActiveRecord::Schema.define(version: 20140223213103) do
 
   create_table "assistants", force: true do |t|
     t.string   "name"
@@ -48,17 +48,6 @@ ActiveRecord::Schema.define(version: 20140223193840) do
 
   create_table "customercategories", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "customers", force: true do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.string   "gender"
-    t.text     "address"
-    t.string   "email"
-    t.integer  "mobile"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -107,8 +96,8 @@ ActiveRecord::Schema.define(version: 20140223193840) do
   create_table "packages", force: true do |t|
     t.decimal  "weight",           precision: 10, scale: 0
     t.integer  "id_employee"
-    t.integer  "origin_customer"
-    t.integer  "destiny_customer"
+    t.string   "origin_customer"
+    t.string   "destiny_customer"
     t.integer  "id_itinerary"
     t.decimal  "price",            precision: 10, scale: 0
     t.datetime "created_at"
@@ -128,7 +117,7 @@ ActiveRecord::Schema.define(version: 20140223193840) do
 
   create_table "ticketbills", force: true do |t|
     t.integer  "id_ticket"
-    t.integer  "id_customer"
+    t.string   "id_customer"
     t.integer  "id_employee"
     t.integer  "itinerary_id"
     t.date     "departure_date"
@@ -158,18 +147,24 @@ ActiveRecord::Schema.define(version: 20140223193840) do
   add_index "tickets", ["seat_category"], name: "index_tickets_on_seat_category", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "name"
+    t.integer  "age"
+    t.string   "gender"
+    t.text     "address"
+    t.integer  "mobile"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

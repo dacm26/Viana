@@ -19,8 +19,6 @@ Viana::Application.routes.draw do
 
   resources :buses
 
-  resources :customers
-
   resources :tickets
 
   resources :seatcategories

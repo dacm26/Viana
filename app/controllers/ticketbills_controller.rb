@@ -1,10 +1,10 @@
 class TicketbillsController < ApplicationController
   before_action :set_ticketbill, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /ticketbills
   # GET /ticketbills.json
   def index
-    @ticketbills = Ticketbill.all
+      @ticketbills = Ticketbill.all
   end
 
   # GET /ticketbills/1

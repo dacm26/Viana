@@ -15,6 +15,17 @@
       <%= link_to "Sign up", new_user_registration_path%> or <%= link_to "sign in", new_user_session_path %>
     <% end %>
   </div>
+  <br>
+  <!--<div>
+    /* <% if user_signed_in?%>
+    /* <% if current_user.admin?%>
+        You're an admin
+    /*  <% else %>
+        You're not an admin
+    /*  <%end%>
+    /* <% end %>
+  </div> -->
+  
 <%= yield %>
 
 </body>

@@ -1,6 +1,6 @@
 class Ticketbill < ActiveRecord::Base
   has_one :ticket
-  has_one :customer
+  has_one :user
   has_one :employee
   has_one :itinerary
   before_save :make_voyage
