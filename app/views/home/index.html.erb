@@ -41,9 +41,16 @@
             <li class="active"><a href="#">HOME</a></li>
             <li><a href="#">ITINERARIES</a></li>
             <li><a href="#">BUY TICKET</a></li>
+            <li><a href="#">DELIVER A PACKAGE</a></li>
             <li><a href="#">COURIER</a></li>
             <li><a href="#">TICKET PRICES</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <% if user_signed_in?%>
+                <li><a href=""><%=current_user.name%></a></li>
+                <li><%= link_to "SIGN OUT", destroy_user_session_path%></li>
+            <% else %>
+            <li><%= link_to "SIGN UP", new_user_registration_path%></li>
+            <li><%= link_to "SIGN IN", new_user_session_path %></li>
+            <% end %>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
           </ul>
         </div><!--/.nav-collapse -->
