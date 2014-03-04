@@ -15,9 +15,9 @@
     <%= f.label :id_ticket %><br>
     <%= f.select :id_ticket, options_for_select(Ticket.all.map{|s|[s.info,s.id]}) %>
   </div>
-  <div class="field">
-    <%= f.label :id_customer %><br>
-    <%= f.select :id_customer, options_for_select(User.all.map{|s|[s.name,s.email]}) %>
+  <div class="field" style="display: none;">
+    <%= f.label :Customer %><br>
+    <%= f.text_field :id_customer, :value => current_user.name, :readonly => true %>
   </div>
   <div class="field">
     <%= f.label :itinerary_id %><br>
