@@ -1,4 +1,7 @@
-<%= form_for(@ticketbill) do |f| %>
+<div lass="container">
+<div class="row centered">
+	<div class="col-lg-8 col-lg-offset-2">
+  <%= form_for(@ticketbill) do |f| %>
   <% if @ticketbill.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@ticketbill.errors.count, "error") %> prohibited this ticketbill from being saved:</h2>
@@ -12,7 +15,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id_ticket %><br>
+    <%= f.label :Ticket_Info %><br>
     <%= f.select :id_ticket, options_for_select(Ticket.all.map{|s|[s.info,s.id]}) %>
   </div>
   <div class="field" style="display: none;">
@@ -20,13 +23,16 @@
     <%= f.text_field :id_customer, :value => current_user.name, :readonly => true %>
   </div>
   <div class="field">
-    <%= f.label :itinerary_id %><br>
+    <%= f.label :Departure_time %><br>
     <%= f.select :itinerary_id, options_for_select(Itinerary.all.map{|s|[s.info,s.id]}) %>  </div>
   <div class="field">
-    <%= f.label :departure_date %><br>
+    <%= f.label :Departure_Date %><br>
     <%= f.date_select :departure_date %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+    </div>
+  </div><!-- row -->
+</div>

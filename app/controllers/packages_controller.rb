@@ -15,6 +15,7 @@ class PackagesController < ApplicationController
   # GET /packages/new
   def new
     @package = Package.new
+    render layout: 'spot'
   end
 
   # GET /packages/1/edit

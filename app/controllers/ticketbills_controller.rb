@@ -1,20 +1,21 @@
 class TicketbillsController < ApplicationController
-  before_action :set_ticketbill, only: [:show, :edit, :update, :destroy]
-  
+  before_action :set_ticketbill, only: [:show, :edit, :update, :destroy]  
   # GET /ticketbills
   # GET /ticketbills.json
   def index
       @ticketbills = Ticketbill.all
   end
-
+  
   # GET /ticketbills/1
   # GET /ticketbills/1.json
   def show
+    redirect_to controller: 'home',action: 'index'
   end
 
   # GET /ticketbills/new
   def new
     @ticketbill = Ticketbill.new
+    render layout: 'spot'
   end
 
   # GET /ticketbills/1/edit
