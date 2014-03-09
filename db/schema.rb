@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223213103) do
+ActiveRecord::Schema.define(version: 20140309043158) do
 
   create_table "assistants", force: true do |t|
     t.string   "name"

@@ -13,13 +13,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field" style="display: none;">
-    <%= f.label :Customer %><br>
-    <%= f.text_field :origin_customer, :value => current_user.name, :readonly => true %>
+   <div class="field">
+    <strong>Remember: Price = weight*$35</strong>
+  </div>
+    <br>
+    <br>
+  <div class="field">
+    <%= f.label :Origin_Customer %><br>
+    <%= f.select :origin_customer, options_for_select(User.all.map{|s|[s.name,s.id]}) %>
   </div>
   <div class="field">
-    <%= f.label :Destiny_customer_id %><br>
+    <%= f.label :Destiny_customer %><br>
     <%= f.text_field :destiny_customer%>
   </div>
   <div class="field">
@@ -34,8 +38,9 @@
     <%= f.label :weight %><br>
     <%= f.text_field :weight %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Add Package'%>
   </div>
 <% end %>
         </div>

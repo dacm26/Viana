@@ -1,0 +1,36 @@
+class AddingSomeBusesAssistantsAndDrivers < ActiveRecord::Migration
+  def change
+    b1 = Bus.create(plate: 'AAA-0000', capacity: '34')
+    b2 = Bus.create(plate: 'AAA-0001', capacity: '34')
+    b3 = Bus.create(plate: 'AAA-0002', capacity: '34')
+    b4 = Bus.create(plate: 'AAA-0003', capacity: '34')
+    b5 = Bus.create(plate: 'AAA-0004', capacity: '34')
+    b6 = Bus.create(plate: 'AAA-0005', capacity: '34')
+    b7 = Bus.create(plate: 'AAA-0006', capacity: '34')
+    b8 = Bus.create(plate: 'AAA-0007', capacity: '34')
+    b9 = Bus.create(plate: 'AAA-0008', capacity: '34')
+    b10 = Bus.create(plate: 'AAA-0009', capacity: '34')
+    
+    d1 = Driver.create(name:'DRIVER_1',age: 55, gender: 'Male', address: 'Tegucigalpa', email: 'd1@gmail.com', mobile: 99999900 , salary:8000 , id_bus: 1)
+    d2 = Driver.create(name:'DRIVER_2',age: 56, gender: 'Male', address: 'Tegucigalpa', email: 'd2@gmail.com', mobile: 99999901 , salary:8000 , id_bus: 2)
+    d3 = Driver.create(name:'DRIVER_3',age: 57, gender: 'Male', address: 'Tegucigalpa', email: 'd3@gmail.com', mobile: 99999902 , salary:8000 , id_bus: 3)
+    d4 = Driver.create(name:'DRIVER_4',age: 58, gender: 'Male', address: 'Tegucigalpa', email: 'd4@gmail.com', mobile: 99999903 , salary:8000 , id_bus: 4)
+    d5 = Driver.create(name:'DRIVER_5',age: 59, gender: 'Male', address: 'San Pedro Sula', email: 'd5@gmail.com', mobile: 99999904 , salary:8000 , id_bus: 5)
+    d6 = Driver.create(name:'DRIVER_6',age: 60, gender: 'Male', address: 'San Pedro Sula', email: 'd6@gmail.com', mobile: 99999905 , salary:8000 , id_bus: 6)
+    d7 = Driver.create(name:'DRIVER_7',age: 61, gender: 'Male', address: 'San Pedro Sula', email: 'd7@gmail.com', mobile: 99999906 , salary:8000 , id_bus: 7)
+    d8 = Driver.create(name:'DRIVER_8',age: 45, gender: 'Male', address: 'Ceiba', email: 'd8@gmail.com', mobile: 99999907 , salary:8000 , id_bus: 8)
+    d9 = Driver.create(name:'DRIVER_9',age: 42, gender: 'Male', address: 'Ceiba', email: 'd9@gmail.com', mobile: 99999908 , salary:8000 , id_bus: 9)
+    d10 = Driver.create(name:'DRIVER_10',age: 39, gender: 'Male', address: 'Ceiba', email: 'd10@gmail.com', mobile: 99999909 , salary:8000 , id_bus: 10)
+    
+    a1 = Assistant.create(name:'ASSIST_1',age: 55, gender: 'Male', address: 'Tegucigalpa', email: 'a1@gmail.com', mobile: 98999900 , salary:8000 , id_bus: 1)
+    a2 = Assistant.create(name:'ASSIST_2',age: 56, gender: 'Female', address: 'Tegucigalpa', email: 'a2@gmail.com', mobile: 98999901 , salary:8000 , id_bus: 2)
+    a3 = Assistant.create(name:'ASSIST_3',age: 57, gender: 'Male', address: 'Tegucigalpa', email: 'a3@gmail.com', mobile: 98999902 , salary:8000 , id_bus: 3)
+    a4 = Assistant.create(name:'ASSIST_4',age: 58, gender: 'Female', address: 'Tegucigalpa', email: 'a4@gmail.com', mobile: 89999903 , salary:8000 , id_bus: 4)
+    a5 = Assistant.create(name:'ASSIST_5',age: 59, gender: 'Male', address: 'San Pedro Sula', email: 'a5@gmail.com', mobile: 98999904 , salary:8000 , id_bus: 5)
+    a6 = Assistant.create(name:'ASSIST_6',age: 60, gender: 'Female', address: 'San Pedro Sula', email: 'a6@gmail.com', mobile: 98999905 , salary:8000 , id_bus: 6)
+    a7 = Assistant.create(name:'ASSIST_7',age: 61, gender: 'Male', address: 'San Pedro Sula', email: 'a7@gmail.com', mobile: 99989906 , salary:8000 , id_bus: 7)
+    a8 = Assistant.create(name:'ASSIST_8',age: 45, gender: 'Female', address: 'Ceiba', email: 'a8@gmail.com', mobile: 99998907 , salary:8000 , id_bus: 8)
+    a9 = Assistant.create(name:'ASSIST_9',age: 42, gender: 'Male', address: 'Ceiba', email: 'a9@gmail.com', mobile: 99989908 , salary:8000 , id_bus: 9)
+    a10 = Assistant.create(name:'ASSIST_10',age: 39, gender: 'Female', address: 'Ceiba', email: 'a10@gmail.com', mobile: 98999909 , salary:8000 , id_bus: 10)
+  end
+end

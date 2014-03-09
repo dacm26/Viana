@@ -18,10 +18,15 @@
     <%= f.label 'Ticket_Price_(viceversa)' %><br>
     <%= f.select :id_ticket, options_for_select(Ticket.all.map{|s|[s.info,s.id]}) %>
   </div>
+    <%if !current_user.admin?%>
   <div class="field" style="display: none;">
     <%= f.label :Customer %><br>
     <%= f.text_field :id_customer, :value => current_user.name, :readonly => true %>
   </div>
+    <%else%>
+      <%= f.label :Customer%><br>
+      <%= f.select :id_customer, options_for_select(User.all.map{|s|[s.name,s.id]}) %><br>
+    <%end%>
   <div class="field">
     <%= f.label :Departure_time %><br>
     <%= f.select :itinerary_id, options_for_select(Itinerary.all.map{|s|[s.info,s.id]}) %>  </div>
@@ -30,7 +35,7 @@
     <%= f.date_select :departure_date %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Buy Ticket'%>
   </div>
 <% end %>
     </div>

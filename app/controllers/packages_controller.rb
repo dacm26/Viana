@@ -10,6 +10,7 @@ class PackagesController < ApplicationController
   # GET /packages/1
   # GET /packages/1.json
   def show
+    redirect_to controller: 'home',action: 'index'
   end
 
   # GET /packages/new
