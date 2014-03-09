@@ -45,13 +45,15 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><%= link_to "HOME",controller: 'home', action: 'index' %></li>
-            <li><a href="#">ITINERARIES</a></li>
+            <li><%= link_to "ITINERARIES",controller: 'itineraries', action: 'index' %></li>
             <% if user_signed_in?%>
                <li><%= link_to "BUY TICKET",new_ticketbill_path %></li>
-               <li><%= link_to "DELIVER A PACKAGE",new_package_path %></li>
+               <% if current_user.admin?%>
+                 <li><%= link_to "DELIVER APACKAGES",new_package_path %></li>
+                 <li><%= link_to "QUERIES",controller: 'home', action: 'queries' %></li>
+               <%end%>
             <%end%>
-            <li><a href="#">COURIER</a></li>
-            <li><a href="#">TICKET PRICES</a></li>
+            <li><%= link_to "TICKET PRICES",controller: 'tickets', action: 'index' %></li>
             <% if user_signed_in?%>
                 <li><a href=""><%=current_user.name%></a></li>
                 <li><%= link_to "SIGN OUT", destroy_user_session_path%></li>

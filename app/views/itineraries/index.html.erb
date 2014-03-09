@@ -1,29 +1,45 @@
-<h1>Listing itineraries</h1>
-
-<table>
+<br>
+<br>
+<div lass="container">
+<div class="row centered">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="table-responsive">
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Departure time</th>
-      <th>Arrival time</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="danger">From</th>
+      <th class="danger">To (viceversa)</th>
+      <th class="danger">Departure time</th>
+      <th class="danger">Arrival time</th>
     </tr>
   </thead>
 
   <tbody>
     <% @itineraries.each do |itinerary| %>
       <tr>
-        <td><%= itinerary.departure_time %></td>
-        <td><%= itinerary.arrival_time %></td>
-        <td><%= link_to 'Show', itinerary %></td>
+        <%if itinerary.id == 1%>
+        <td rowspan="5" align="center"><strong>Tegucigalpa</strong></td>
+        <td rowspan="5" align="center"><strong>San Pedro Sula</strong></td>
+        <%elsif itinerary.id == 6%>
+        <td rowspan="3" align="center"><strong>Tegucigalpa</strong></td>
+        <td rowspan="3" align="center"><strong>Ceiba</strong></td>
+        <%elsif itinerary.id == 9%>
+        <td rowspan="4" align="center"><strong>San Pedro Sula</strong></td>
+        <td rowspan="4" align="center"><strong>Ceiba</strong></td>
+        <%end%>
+        
+        <td><%= itinerary.departure_time.strftime("%H:%M") %></td>
+        <td><%= itinerary.arrival_time.strftime("%H:%M") %></td>
+        <!--<td><%= link_to 'Show', itinerary %></td>
         <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
-        <td><%= link_to 'Destroy', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Itinerary', new_itinerary_path %>
+  </div>
+  </div>
+  </div>
+</div>

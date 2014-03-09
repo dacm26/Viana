@@ -23,8 +23,12 @@
     <%= f.text_field :destiny_customer%>
   </div>
   <div class="field">
-    <%= f.label :Itinerary %><br>
-    <%= f.select :id_itinerary, options_for_select(Itinerary.all.map{|s|[s.info,s.id]}) %>
+    <%= f.label :origin_city %><br>
+    <%= f.select :origin_city, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :destiny_city %><br>
+    <%= f.select :destiny_city, options_for_select(City.all.map{|s|[s.name,s.id]}) %>
   </div>
   <div class="field">
     <%= f.label :weight %><br>

@@ -15,7 +15,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :Ticket_Info %><br>
+    <%= f.label 'Ticket_Price_(viceversa)' %><br>
     <%= f.select :id_ticket, options_for_select(Ticket.all.map{|s|[s.info,s.id]}) %>
   </div>
   <div class="field" style="display: none;">

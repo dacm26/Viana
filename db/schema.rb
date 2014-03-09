@@ -74,14 +74,16 @@ ActiveRecord::Schema.define(version: 20140223213103) do
     t.decimal  "weight",           precision: 10, scale: 0
     t.string   "origin_customer"
     t.string   "destiny_customer"
-    t.integer  "id_itinerary"
+    t.integer  "origin_city"
+    t.integer  "destiny_city"
     t.decimal  "price",            precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "packages", ["destiny_city"], name: "index_packages_on_destiny_city", using: :btree
   add_index "packages", ["destiny_customer"], name: "index_packages_on_destiny_customer", using: :btree
-  add_index "packages", ["id_itinerary"], name: "index_packages_on_id_itinerary", using: :btree
+  add_index "packages", ["origin_city"], name: "index_packages_on_origin_city", using: :btree
   add_index "packages", ["origin_customer"], name: "index_packages_on_origin_customer", using: :btree
 
   create_table "seatcategories", force: true do |t|

@@ -5,6 +5,7 @@ class ItinerariesController < ApplicationController
   # GET /itineraries.json
   def index
     @itineraries = Itinerary.all
+    render layout: 'spot'
   end
 
   # GET /itineraries/1

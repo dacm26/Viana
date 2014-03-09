@@ -70,6 +70,6 @@ class PackagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def package_params
-      params.require(:package).permit(:weight, :origin_customer, :destiny_customer, :id_itinerary, :price)
+      params.require(:package).permit(:weight, :origin_customer, :destiny_customer, :origin_city, :destiny_city, :price)
     end
 end

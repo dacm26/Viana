@@ -26,6 +26,8 @@ Viana::Application.routes.draw do
   resources :cities
   
   resources :home
+  
+  get '/queries' => 'home#queries'
 
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,35 +1,39 @@
-<h1>Listing tickets</h1>
-
-<table>
+<br>
+<br>
+<div lass="container">
+<div class="row centered">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="table-responsive">
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Seat category</th>
-      <th>Customer category</th>
-      <th>Origin city</th>
-      <th>Destiny city</th>
-      <th>Price</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="danger">Seat category</th>
+      <th class="danger">Customer category</th>
+      <th class="danger">Origin city</th>
+      <th class="danger">Destiny city</th>
+      <th class="danger">Price (viceversa)</th>
     </tr>
   </thead>
 
   <tbody>
     <% @tickets.each do |ticket| %>
       <tr>
-        <td><%= ticket.seat_category %></td>
-        <td><%= ticket.customer_category %></td>
-        <td><%= ticket.origin_city %></td>
-        <td><%= ticket.destiny_city %></td>
-        <td><%= ticket.price %></td>
-        <td><%= link_to 'Show', ticket %></td>
+        
+        <td><%= Seatcategory.find(ticket.seat_category).name %></td>
+        <td><%= Customercategory.find(ticket.customer_category).name %></td>
+        <td><%= City.find(ticket.origin_city).name %></td>
+        <td><%= City.find(ticket.destiny_city).name %></td>
+        <td>$<%= ticket.price %></td>
+        <!--<td><%= link_to 'Show', ticket %></td>
         <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Ticket', new_ticket_path %>
+  </div>
+  </div>
+  </div>
+</div>

@@ -5,5 +5,7 @@ class CreateSeatcategories < ActiveRecord::Migration
 
       t.timestamps
     end
+    c1=Seatcategory.create(name: 'Diamond')
+    c2=Seatcategory.create(name: 'Economic')
   end
 end

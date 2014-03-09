@@ -5,5 +5,7 @@ class CreateCustomercategories < ActiveRecord::Migration
 
       t.timestamps
     end
+    c1=Customercategory.create(name: 'Adult')
+    c2=Customercategory.create(name: 'Kid/Senior')
   end
 end
