@@ -1,8 +1,8 @@
 class Ticket < ActiveRecord::Base
-  has_one :seatcategory
-  has_one :customercategory
+  belongs_to :seatcategory
+  belongs_to :customercategory
   has_many :cities
-  belongs_to :ticketbill
+  has_many :ticketbills
   before_save :make_info
   attr_accessible :info,:seat_category,:customer_category,:origin_city,:destiny_city,:price
   def make_info

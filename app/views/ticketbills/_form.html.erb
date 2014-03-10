@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label 'Ticket_Price_(viceversa)' %><br>
-    <%= f.select :id_ticket, options_for_select(Ticket.all.map{|s|[s.info,s.id]}) %>
+    <%= f.select :ticket_id, options_for_select(Ticket.all.map{|s|[s.info,s.id]}) %>
   </div>
     <%if !current_user.admin?%>
   <div class="field" style="display: none;">

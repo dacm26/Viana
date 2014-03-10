@@ -70,6 +70,6 @@ class TicketbillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticketbill_params
-      params.require(:ticketbill).permit(:id_ticket, :id_customer, :itinerary_id, :departure_date)
+      params.require(:ticketbill).permit(:ticket_id, :id_customer, :itinerary_id, :departure_date)
     end
 end

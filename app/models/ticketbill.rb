@@ -1,9 +1,9 @@
 class Ticketbill < ActiveRecord::Base
-  has_one :ticket
+  belongs_to :ticket
   has_one :user
   has_one :itinerary
   before_save :make_voyage
-  attr_accessible :id_ticket, :id_customer, :itinerary_id, :departure_date
+  attr_accessible :ticket_id, :id_customer, :itinerary_id, :departure_date
   def make_voyage
     voyages=Voyage.all
     if  voyages.empty?

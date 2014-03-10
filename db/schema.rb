@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309043158) do
+ActiveRecord::Schema.define(version: 20140310000018) do
 
   create_table "assistants", force: true do |t|
     t.string   "name"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20140309043158) do
   end
 
   create_table "ticketbills", force: true do |t|
-    t.integer  "id_ticket"
+    t.integer  "ticket_id"
     t.string   "id_customer"
     t.integer  "itinerary_id"
     t.date     "departure_date"
@@ -102,8 +102,8 @@ ActiveRecord::Schema.define(version: 20140309043158) do
   end
 
   add_index "ticketbills", ["id_customer"], name: "index_ticketbills_on_id_customer", using: :btree
-  add_index "ticketbills", ["id_ticket"], name: "index_ticketbills_on_id_ticket", using: :btree
   add_index "ticketbills", ["itinerary_id"], name: "index_ticketbills_on_itinerary_id", using: :btree
+  add_index "ticketbills", ["ticket_id"], name: "index_ticketbills_on_ticket_id", using: :btree
 
   create_table "tickets", force: true do |t|
     t.string   "info"

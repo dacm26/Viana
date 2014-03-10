@@ -1,4 +1,4 @@
 class Customercategory < ActiveRecord::Base
-  belongs_to :ticket
+  has_many :tickets
   attr_accessible :name
 end

@@ -27,9 +27,18 @@ Viana::Application.routes.draw do
   
   resources :home
   
-  get '/queries' => 'home#queries'
+  resources :queries
+  
+  get '/query1' => 'queries#query1'
+  
+  get '/query2' => 'queries#query2'
+  
+  get '/query3' => 'queries#query3'
+  
+  get '/query4' => 'queries#query4'
 
   root 'home#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
