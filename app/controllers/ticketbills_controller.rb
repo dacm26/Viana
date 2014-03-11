@@ -21,6 +21,11 @@ class TicketbillsController < ApplicationController
   # GET /ticketbills/1/edit
   def edit
   end
+  
+  def paidaticket
+    @ticketbill.paid=true
+    @ticketbill.save
+  end
 
   # POST /ticketbills
   # POST /ticketbills.json
@@ -57,7 +62,7 @@ class TicketbillsController < ApplicationController
   def destroy
     @ticketbill.destroy
     respond_to do |format|
-      format.html { redirect_to ticketbills_url }
+      format.html { redirect_to controller: 'queries',action: 'query5' }
       format.json { head :no_content }
     end
   end

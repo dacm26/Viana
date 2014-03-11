@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+
+<div lass="container">
+  <div class="row centered">
+	  <div class="col-lg-10 col-lg-offset-1">
+      <div class="table-responsive">
+      <table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="danger">Id ticket</th>
+      <th class="danger">Id customer</th>
+      <th class="danger">Itinerary</th>
+      <th class="danger">Departure date</th>
+      <th class="danger">Paid(Yes/No)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tickets.each do |ticketbill| %>
+      <tr>
+        <td><%= Ticket.find(ticketbill.ticket_id).info %></td>
+        <td><%= User.find(ticketbill.id_customer).name %></td>
+        <td><%= Itinerary.find(ticketbill.itinerary_id).info %></td>
+        <td><%= ticketbill.departure_date %></td>
+        <% if ticketbill.paid? %>
+          <td>Yes</td>
+        <%else%>
+          <td>No</td>
+        <%end%>
+        <td class="btn btn-success"><%= link_to 'Pay Ticket', edit_ticketbill_path(ticketbill) %></td>
+        <td class="btn btn-danger"><%= link_to 'Destroy', ticketbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+    </div>
+  </div><!-- row -->
+</div>
+</div>

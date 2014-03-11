@@ -50,7 +50,7 @@
             <% if user_signed_in?%>
                <li><%= link_to "BUY TICKET",new_ticketbill_path %></li>
                <% if current_user.admin?%>
-                 <li><%= link_to "DELIVER APACKAGES",new_package_path %></li>
+                 <li><%= link_to "DELIVER A PACKAGES",new_package_path %></li>
                  <li><%= link_to "QUERIES",controller: 'queries', action: 'index' %></li>
                <%end%>
             <%end%>

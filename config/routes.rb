@@ -36,6 +36,8 @@ Viana::Application.routes.draw do
   get '/query3' => 'queries#query3'
   
   get '/query4' => 'queries#query4'
+  
+  get '/query5' => 'queries#query5'
 
   root 'home#index'
   

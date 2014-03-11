@@ -1,5 +1,5 @@
 class Voyage < ActiveRecord::Base
   has_many :itineraries
-  has_one :bus
+  belongs_to :bus
   attr_accessible :v_date, :id_itinerary, :seats, :id_bus
 end
