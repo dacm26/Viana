@@ -1,15 +1,18 @@
-<h1>Listing voyages</h1>
-
-<table>
+<br>
+<br>
+<div lass="container">
+<div class="row centered">
+<div class="col-lg-8 col-lg-offset-2">
+<div class="table-responsive">
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>V date</th>
-      <th>Id itinerary</th>
-      <th>Seats</th>
-      <th>Bus</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="danger">Departure Date</th>
+      <th class="danger">Departure Time</th>
+      <th class="danger">From</th>
+      <th class="danger">To</th>
+      <th class="danger">Available Seats</th>
+      <th class="danger">Bus</th>
     </tr>
   </thead>
 
@@ -17,17 +20,27 @@
     <% @voyages.each do |voyage| %>
       <tr>
         <td><%= voyage.v_date %></td>
-        <td><%= voyage.id_itinerary %></td>
+        <td><%= Itinerary.find(voyage.id_itinerary).info%></td>
+        <% id_it= voyage.id_itinerary %>
+        <%if id_it >= 1 and id_it < 6 %>
+        <td  align="center"><strong>Tegucigalpa</strong></td>
+        <td  align="center"><strong>San Pedro Sula</strong></td>
+        <%elsif id_it >= 6 and id_it < 9%>
+        <td  align="center"><strong>Tegucigalpa</strong></td>
+        <td  align="center"><strong>Ceiba</strong></td>
+        <%else%>
+        <td  align="center"><strong>San Pedro Sula</strong></td>
+        <td  align="center"><strong>Ceiba</strong></td>
+        <%end%>
         <td><%= voyage.seats %></td>
         <td><%= voyage.id_bus %></td>
-        <td><%= link_to 'Show', voyage %></td>
-        <td><%= link_to 'Edit', edit_voyage_path(voyage) %></td>
-        <td><%= link_to 'Destroy', voyage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Voyage', new_voyage_path %>
+  </div>
+  </div>
+  </div>
+</div>

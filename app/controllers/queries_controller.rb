@@ -50,5 +50,13 @@ class QueriesController < ApplicationController
       end
     end
   end
+  
+  def payaticket
+    ticketbill=Ticketbill.find(params[:id])
+    ticketbill.paid=true
+    ticketbill.save
+    redirect_to controller: 'queries',action: 'query5'
+  end
+
 end
 

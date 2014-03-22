@@ -22,10 +22,6 @@ class TicketbillsController < ApplicationController
   def edit
   end
   
-  def paidaticket
-    @ticketbill.paid=true
-    @ticketbill.save
-  end
 
   # POST /ticketbills
   # POST /ticketbills.json
@@ -60,6 +56,13 @@ class TicketbillsController < ApplicationController
   # DELETE /ticketbills/1
   # DELETE /ticketbills/1.json
   def destroy
+    voy1=Voyage.all.where(id_itinerary: @ticketbill.itinerary_id).where(v_date: @ticketbill.departure_date).limit(1)
+    voy=voy1[0]
+    voy.seats=voy.seats+1
+    voy.save
+    if voy.seats == 34
+      voy.destroy
+    end
     @ticketbill.destroy
     respond_to do |format|
       format.html { redirect_to controller: 'queries',action: 'query5' }

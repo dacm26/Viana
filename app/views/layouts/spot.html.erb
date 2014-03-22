@@ -50,14 +50,32 @@
             <% if user_signed_in?%>
                <li><%= link_to "BUY TICKET",new_ticketbill_path %></li>
                <% if current_user.admin?%>
-                 <li><%= link_to "DELIVER A PACKAGES",new_package_path %></li>
-                 <li><%= link_to "QUERIES",controller: 'queries', action: 'index' %></li>
+                 <li><%= link_to "DELIVER A PACKAGE",new_package_path %></li>
+                 <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                       QUERIES<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><%= link_to "Yearly Earnings with tickets",controller: 'queries', action: 'query1' %></li>
+                      <li><%= link_to "Total of customers by seat category and year",controller: 'queries', action: 'query2' %></li>
+                      <li><%= link_to "Total of customers by customer category and year",controller: 'queries', action: 'query3' %></li>
+                      <li><%= link_to "Yearly Earnings with packages",controller: 'queries', action: 'query4' %></li>
+                      <li><%= link_to "Pay tickets",controller: 'queries', action: 'query5' %></li>
+                      <li><%= link_to "View Voyages",controller: 'voyages', action: 'index' %></li>
+                    </ul>
+                 </li>
                <%end%>
             <%end%>
             <li><%= link_to "TICKET PRICES",controller: 'tickets', action: 'index' %></li>
             <% if user_signed_in?%>
-                <li><a href=""><%=current_user.name%></a></li>
-                <li><%= link_to "SIGN OUT", destroy_user_session_path%></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                       <%=current_user.name%> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><%= link_to "SIGN OUT", destroy_user_session_path%></li>
+                    </ul>
+                 </li>
             <% else %>
             <li><%= link_to "SIGN UP", new_user_registration_path%></li>
             <li><%= link_to "SIGN IN", new_user_session_path %></li>

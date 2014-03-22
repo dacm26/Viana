@@ -5,6 +5,7 @@ class VoyagesController < ApplicationController
   # GET /voyages.json
   def index
     @voyages = Voyage.all
+    render layout: 'spot'
   end
 
   # GET /voyages/1

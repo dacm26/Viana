@@ -6,7 +6,7 @@
   <div class="row centered">
 	  <div class="col-lg-10 col-lg-offset-1">
       <div class="table-responsive">
-      <table class="table table-hover">
+      <table class="table table-bordered">
   <thead>
     <tr>
       <th class="danger">Id ticket</th>
@@ -28,9 +28,10 @@
           <td>Yes</td>
         <%else%>
           <td>No</td>
+          <td class="btn btn-success"><%= link_to 'Pay Ticket', pay_a_ticket_path(ticketbill.id) %></td>
+          <td class="btn btn-danger"><%= link_to 'Cancel', ticketbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
-        <td class="btn btn-success"><%= link_to 'Pay Ticket', edit_ticketbill_path(ticketbill) %></td>
-        <td class="btn btn-danger"><%= link_to 'Destroy', ticketbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
       </tr>
     <% end %>
   </tbody>
