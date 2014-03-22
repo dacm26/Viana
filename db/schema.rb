@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311024947) do
+ActiveRecord::Schema.define(version: 20140322043908) do
 
   create_table "assistants", force: true do |t|
     t.string   "name"
@@ -153,9 +153,13 @@ ActiveRecord::Schema.define(version: 20140311024947) do
     t.integer  "id_bus"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "from"
+    t.integer  "to"
   end
 
+  add_index "voyages", ["from"], name: "index_voyages_on_from", using: :btree
   add_index "voyages", ["id_bus"], name: "index_voyages_on_id_bus", using: :btree
   add_index "voyages", ["id_itinerary"], name: "index_voyages_on_id_itinerary", using: :btree
+  add_index "voyages", ["to"], name: "index_voyages_on_to", using: :btree
 
 end

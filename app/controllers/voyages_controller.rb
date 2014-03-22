@@ -70,6 +70,6 @@ class VoyagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def voyage_params
-      params.require(:voyage).permit(:v_date, :id_itinerary, :seats, :id_bus)
+      params.require(:voyage).permit(:v_date, :id_itinerary, :seats, :id_bus,:from,:to)
     end
 end

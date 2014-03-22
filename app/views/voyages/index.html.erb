@@ -21,17 +21,8 @@
       <tr>
         <td><%= voyage.v_date %></td>
         <td><%= Itinerary.find(voyage.id_itinerary).info%></td>
-        <% id_it= voyage.id_itinerary %>
-        <%if id_it >= 1 and id_it < 6 %>
-        <td  align="center"><strong>Tegucigalpa</strong></td>
-        <td  align="center"><strong>San Pedro Sula</strong></td>
-        <%elsif id_it >= 6 and id_it < 9%>
-        <td  align="center"><strong>Tegucigalpa</strong></td>
-        <td  align="center"><strong>Ceiba</strong></td>
-        <%else%>
-        <td  align="center"><strong>San Pedro Sula</strong></td>
-        <td  align="center"><strong>Ceiba</strong></td>
-        <%end%>
+        <td  align="center"><%=City.find(voyage.from).name%></td>
+        <td  align="center"><%=City.find(voyage.to).name%></td>
         <td><%= voyage.seats %></td>
         <td><%= voyage.id_bus %></td>
       </tr>

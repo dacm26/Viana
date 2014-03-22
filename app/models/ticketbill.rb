@@ -6,14 +6,15 @@ class Ticketbill < ActiveRecord::Base
   attr_accessible :ticket_id, :id_customer, :itinerary_id, :departure_date
   def make_voyage
     voyages=Voyage.all
+    tick=Ticket.find(ticket_id)
     if  voyages.empty?
       buses=Bus.all
       r_id = rand(buses.size)+1
-      v=Voyage.create(:v_date => departure_date, :id_itinerary => itinerary_id, :seats =>33, :id_bus => r_id)
+      v=Voyage.create(:v_date => departure_date, :id_itinerary => itinerary_id, :seats =>33, :id_bus => r_id,:from => tick.origin_city, :to => tick.destiny_city)
     else
       need_a_voyage=true
       voyages.each do|v|
-        if v.v_date == departure_date && v.id_itinerary == itinerary_id
+        if v.v_date == departure_date && v.id_itinerary == itinerary_id && v.from == tick.origin_city && v.to == tick.destiny_city
           if v.seats == 0
             return false
           else
@@ -26,7 +27,7 @@ class Ticketbill < ActiveRecord::Base
       if need_a_voyage
         buses=Bus.all
         r_id = rand(buses.size)+1
-        v=Voyage.create(:v_date => departure_date, :id_itinerary => itinerary_id, :seats =>33, :id_bus => r_id)
+        v=Voyage.create(:v_date => departure_date, :id_itinerary => itinerary_id, :seats =>33, :id_bus => r_id,:from => tick.origin_city, :to => tick.destiny_city)
       end
     end
   end
