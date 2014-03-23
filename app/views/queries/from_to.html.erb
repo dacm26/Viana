@@ -1,0 +1,13 @@
+<div lass="container">
+  <div class="row centered">
+	  <div class="col-lg-8 col-lg-offset-2">
+        <div class="field">
+          <%= label 'Select:' %><br>
+          <%= select :id, options_for_select(FromTo.all.map{|s|[s.info,s.id]}), prompt: '--select a destiny--' %>
+      </div>
+        <div class="actions">
+          <div class="btn btn-success"><%= link_to 'Go to buy Ticket', to_ticket_path(:id) %></div>
+         </div>
+    </div>
+  </div><!-- row -->
+</div>

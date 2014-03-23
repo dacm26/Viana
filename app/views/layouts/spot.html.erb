@@ -54,7 +54,7 @@
             <li class="active"><%= link_to "HOME",controller: 'home', action: 'index' %></li>
             <li><%= link_to "ITINERARIES",controller: 'itineraries', action: 'index' %></li>
             <% if user_signed_in?%>
-               <li><%= link_to "BUY TICKET",new_ticketbill_path %></li>
+               <li><%= link_to "BUY TICKET",controller: 'from_tos', action: 'index' %></li>
                <% if current_user.admin?%>
                  <li><%= link_to "DELIVER A PACKAGE",new_package_path %></li>
                  <li class="dropdown">

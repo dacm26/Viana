@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322043908) do
+ActiveRecord::Schema.define(version: 20140323052027) do
 
   create_table "assistants", force: true do |t|
     t.string   "name"
@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 20140322043908) do
   end
 
   add_index "drivers", ["id_bus"], name: "index_drivers_on_id_bus", using: :btree
+
+  create_table "from_tos", force: true do |t|
+    t.string   "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "itineraries", force: true do |t|
     t.string   "info"

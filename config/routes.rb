@@ -29,6 +29,10 @@ Viana::Application.routes.draw do
   
   resources :queries
   
+  resources :from_tos
+  
+  get '/from_tos/:id' => 'fromtos#to_ticket', :as => 'to_ticket'
+  
   get '/query1' => 'queries#query1'
   
   get '/query2' => 'queries#query2'
@@ -40,6 +44,10 @@ Viana::Application.routes.draw do
   get '/query5' => 'queries#query5'
   
   get '/query5/:id' => 'queries#payaticket', :as => 'pay_a_ticket'
+  
+  #get '/from_to' => 'ticketbills#from_to', :as => 'from_to'
+  
+  #get '/ticketbills/new/:id' => 'ticketbills#to_ticket', :as => 'to_ticket'
   
   #get '/ticketbills/new?ticket_id=:ticket_id' => 'ticketbills#mod'
 
