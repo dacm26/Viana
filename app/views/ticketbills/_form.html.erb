@@ -14,10 +14,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label 'Ticket_Price_(viceversa)' %><br>
-    <%= f.select :ticket_id, options_for_select(Ticket.all.map{|s|[s.info,s.id]}) %>
-  </div>
     <%if !current_user.admin?%>
   <div class="field" style="display: none;">
     <%= f.label :Customer %><br>
@@ -27,9 +23,28 @@
       <%= f.label :Customer%><br>
       <%= f.select :id_customer, options_for_select(User.all.map{|s|[s.name,s.id]}) %><br>
     <%end%>
-  <div class="field">
-    <%= f.label :Departure_time %><br>
-    <%= f.select :itinerary_id, options_for_select(Itinerary.all.map{|s|[s.info,s.id]}) %>  </div>
+    <div class="field">
+      <label for="ticket_selected">Ticket Price</label><br>
+        <div class="controls">
+          <%= f.collection_select :ticket_id, Ticket.all, "id", "info", prompt: '----------------- select a ticket -----------------' %>
+        </div>
+    </div>
+    
+    <div class="field">
+      <label for="novo_itineraries">Departure Time</label>
+      <div class="controls">
+        <%= f.collection_select :itinerary_id, @itineraries, "id", "info", prompt: '----select an hour----' %>    
+      </div>
+    </div>
+    
+  <!--<div class="field">
+    /*<%= f.label 'Ticket_Price' %><br>
+    /*<%= f.select :ticket_id, options_for_select(Ticket.all.map{|s|[s.info,s.id]}), prompt: '--select a ticket--' %>
+  </div>-->
+  <!--<div class="field">
+    /*<%= f.label :Departure_time %><br>
+    /*<%= f.select :itinerary_id, options_for_select(Itinerary.all.map{|s|[s.info,s.id]}), prompt: '--select an hour--' %>  
+  </div>-->
   <div class="field">
     <%= f.label :Departure_Date %><br>
     <%= f.date_select :departure_date %>
@@ -41,3 +56,5 @@
     </div>
   </div><!-- row -->
 </div>
+
+

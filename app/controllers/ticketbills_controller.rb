@@ -11,10 +11,32 @@ class TicketbillsController < ApplicationController
   def show
     redirect_to controller: 'home',action: 'index'
   end
-
+  
+  #def mod
+   # if params[:ticket_id].present?
+    #  if (:ticket_id >= 1 && :ticket_id<= 4) || (:ticket_id >= 13 && :ticket_id<= 16) 
+     #   @itineraries = Itinerary.find(1..5)
+      #  respond_to do |format|
+       #   format.json {render json: @itineraries}
+        #end
+      #elsif (:ticket_id >= 17 && :ticket_id<= 20) || (:ticket_id >= 5 && :ticket_id<= 8)
+       # @itineraries = Itinerary.find(6..8)
+        #respond_to do |format|
+         # format.json {render json: @itineraries}
+        #end
+      #else
+       # @itineraries = Itinerary.find(9..12)
+        #respond_to do |format|
+         # format.json {render json: @itineraries}
+        #end
+      #end     
+    #end
+  #end
+  
   # GET /ticketbills/new
   def new
     @ticketbill = Ticketbill.new
+    @itineraries=Itinerary.all
     render layout: 'spot'
   end
 

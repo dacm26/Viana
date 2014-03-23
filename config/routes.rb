@@ -40,6 +40,8 @@ Viana::Application.routes.draw do
   get '/query5' => 'queries#query5'
   
   get '/query5/:id' => 'queries#payaticket', :as => 'pay_a_ticket'
+  
+  #get '/ticketbills/new?ticket_id=:ticket_id' => 'ticketbills#mod'
 
   root 'home#index'
   

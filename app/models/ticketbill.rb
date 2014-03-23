@@ -5,6 +5,7 @@ class Ticketbill < ActiveRecord::Base
   before_save :make_voyage
   attr_accessible :ticket_id, :id_customer, :itinerary_id, :departure_date
   def make_voyage
+    if  self.new_record?
     voyages=Voyage.all
     tick=Ticket.find(ticket_id)
     if  voyages.empty?
@@ -30,5 +31,6 @@ class Ticketbill < ActiveRecord::Base
         v=Voyage.create(:v_date => departure_date, :id_itinerary => itinerary_id, :seats =>33, :id_bus => r_id,:from => tick.origin_city, :to => tick.destiny_city)
       end
     end
+  end
   end
 end
