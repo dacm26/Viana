@@ -79,7 +79,14 @@
                        <%=current_user.name%> <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                      <li><%= link_to "SIGN OUT", destroy_user_session_path%></li>
+                      <li>
+                          <div class="form-group">
+                            <div class="col-sm-10">
+                              <label for="inputEmail3" class="col-sm-3 control-label"><i class="fa fa-sign-out"></i></label>
+                              <%= link_to "SIGN OUT", destroy_user_session_path%>
+                            </div>
+                          </div>                        
+                      </li>
                     </ul>
                  </li>
             <% else %>
