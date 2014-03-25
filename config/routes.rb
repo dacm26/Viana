@@ -43,6 +43,14 @@ Viana::Application.routes.draw do
   
   get '/query5' => 'queries#query5'
   
+  get '/query6' => 'queries#query6'
+  
+  get '/query7' => 'queries#query7'
+  
+  get '/query8' => 'queries#query8'
+  
+  get '/query9' => 'queries#query9'
+  
   get '/query5/:id' => 'queries#payaticket', :as => 'pay_a_ticket'
   
   #get '/from_to' => 'ticketbills#from_to', :as => 'from_to'

@@ -5,6 +5,7 @@ class DriversController < ApplicationController
   # GET /drivers.json
   def index
     @drivers = Driver.all
+    render layout: 'spot'
   end
 
   # GET /drivers/1
@@ -15,6 +16,7 @@ class DriversController < ApplicationController
   # GET /drivers/new
   def new
     @driver = Driver.new
+    render layout: 'spot'
   end
 
   # GET /drivers/1/edit

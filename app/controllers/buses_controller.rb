@@ -5,6 +5,7 @@ class BusesController < ApplicationController
   # GET /buses.json
   def index
     @buses = Bus.all
+    render layout: 'spot'
   end
 
   # GET /buses/1
@@ -15,6 +16,7 @@ class BusesController < ApplicationController
   # GET /buses/new
   def new
     @bus = Bus.new
+    render layout: 'spot'
   end
 
   # GET /buses/1/edit

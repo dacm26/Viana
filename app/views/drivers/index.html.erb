@@ -1,19 +1,22 @@
-<h1>Listing drivers</h1>
+<br>
+<br>
+<br>
 
-<table>
+<div lass="container">
+  <div class="row centered">
+	  <div class="col-lg-10 col-lg-offset-1">
+      <div class="table-responsive">
+      <table class="table table-borderless">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Mobile</th>
-      <th>Salary</th>
-      <th>Id bus</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="danger">Name</th>
+      <th class="danger">Age</th>
+      <th class="danger">Gender</th>
+      <th class="danger">Address</th>
+      <th class="danger">Email</th>
+      <th class="danger">Mobile</th>
+      <th class="danger">Salary</th>
+      <th class="danger">Bus Plate</th>
     </tr>
   </thead>
 
@@ -27,10 +30,7 @@
         <td><%= driver.email %></td>
         <td><%= driver.mobile %></td>
         <td><%= driver.salary %></td>
-        <td><%= driver.id_bus %></td>
-        <td><%= link_to 'Show', driver %></td>
-        <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
-        <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Bus.find(driver.id_bus).plate %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,3 @@
 
 <br>
 
-<%= link_to 'New Driver', new_driver_path %>

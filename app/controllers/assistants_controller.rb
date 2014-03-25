@@ -5,6 +5,7 @@ class AssistantsController < ApplicationController
   # GET /assistants.json
   def index
     @assistants = Assistant.all
+    render layout: 'spot'
   end
 
   # GET /assistants/1
@@ -15,6 +16,7 @@ class AssistantsController < ApplicationController
   # GET /assistants/new
   def new
     @assistant = Assistant.new
+    render layout: 'spot'
   end
 
   # GET /assistants/1/edit

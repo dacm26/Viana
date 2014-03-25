@@ -50,7 +50,14 @@ class QueriesController < ApplicationController
       end
     end
   end
-  
+  def query6
+  end
+  def query7
+  end
+  def query8
+  end
+  def query9
+  end
   def payaticket
     ticketbill=Ticketbill.find(params[:id])
     ticketbill.paid=true

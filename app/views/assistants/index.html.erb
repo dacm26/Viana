@@ -1,41 +1,39 @@
-<h1>Listing assistants</h1>
+<br>
+<br>
+<br>
 
-<table>
+<div lass="container">
+  <div class="row centered">
+	  <div class="col-lg-10 col-lg-offset-1">
+      <div class="table-responsive">
+      <table class="table table-borderless">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Gender</th>
-      <th>Address</th>
-      <th>Email</th>
-      <th>Mobile</th>
-      <th>Salary</th>
-      <th>Id bus</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="danger">Name</th>
+      <th class="danger">Age</th>
+      <th class="danger">Gender</th>
+      <th class="danger">Address</th>
+      <th class="danger">Email</th>
+      <th class="danger">Mobile</th>
+      <th class="danger">Salary</th>
+      <th class="danger">Bus Plate</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @assistants.each do |assistant| %>
+    <% @assistants.each do |driver| %>
       <tr>
-        <td><%= assistant.name %></td>
-        <td><%= assistant.age %></td>
-        <td><%= assistant.gender %></td>
-        <td><%= assistant.address %></td>
-        <td><%= assistant.email %></td>
-        <td><%= assistant.mobile %></td>
-        <td><%= assistant.salary %></td>
-        <td><%= assistant.id_bus %></td>
-        <td><%= link_to 'Show', assistant %></td>
-        <td><%= link_to 'Edit', edit_assistant_path(assistant) %></td>
-        <td><%= link_to 'Destroy', assistant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= driver.name %></td>
+        <td><%= driver.age %></td>
+        <td><%= driver.gender %></td>
+        <td><%= driver.address %></td>
+        <td><%= driver.email %></td>
+        <td><%= driver.mobile %></td>
+        <td><%= driver.salary %></td>
+        <td><%= Bus.find(driver.id_bus).plate %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Assistant', new_assistant_path %>

@@ -1,3 +1,8 @@
+<BR>
+<BR>
+<div lass="container">
+<div class="row centered">
+	<div class="col-lg-8 col-lg-offset-2">
 <%= form_for(@bus) do |f| %>
   <% if @bus.errors.any? %>
     <div id="error_explanation">
@@ -10,6 +15,10 @@
       </ul>
     </div>
   <% end %>
+
+      <h2 ><strong>Add a Bus</strong></h2>
+
+    
   <div class="field">
     <%= f.label :plate %><br>
     <%= f.text_field :plate %>
@@ -23,3 +32,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+    
+    </div>
+  </div><!-- row -->
+</div>
+
