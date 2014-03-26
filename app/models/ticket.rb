@@ -5,6 +5,8 @@ class Ticket < ActiveRecord::Base
   has_many :ticketbills
   before_save :make_info
   attr_accessible :info,:seat_category,:customer_category,:origin_city,:destiny_city,:price
+  validates :info, :presence => true
+  validates :price, :numericality => true
   def make_info
     information=Seatcategory.find(seat_category).name+', '+Customercategory.find(customer_category).name+', '+City.find(origin_city).name+' to '+City.find(destiny_city).name+': $'+price.to_s
     self.info=information

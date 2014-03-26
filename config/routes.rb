@@ -51,6 +51,10 @@ Viana::Application.routes.draw do
   
   get '/query9' => 'queries#query9'
   
+  get '/query9/:id' => 'queries#make_admin', :as => 'make_admin'
+  
+  get '/view_users' => 'queries#view_users'
+  
   get '/query5/:id' => 'queries#payaticket', :as => 'pay_a_ticket'
   
   #get '/from_to' => 'ticketbills#from_to', :as => 'from_to'

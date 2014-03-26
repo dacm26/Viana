@@ -31,6 +31,7 @@
         <td><%= driver.mobile %></td>
         <td><%= driver.salary %></td>
         <td><%= Bus.find(driver.id_bus).plate %></td>
+        <td class="btn btn-success"><%= link_to 'Edit', edit_assistant_path(driver) %></td>
       </tr>
     <% end %>
   </tbody>

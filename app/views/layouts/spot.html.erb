@@ -62,13 +62,11 @@
                        QUERIES<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                      <li><%= link_to "View Drivers",controller: 'drivers', action: 'index' %></li>
-                      <li><%= link_to "View Assistants",controller: 'assistants', action: 'index' %></li>
                       <li><%= link_to "Yearly Earnings with tickets",controller: 'queries', action: 'query1' %></li>
                       <li><%= link_to "Total of customers by seat category and year",controller: 'queries', action: 'query2' %></li>
                       <li><%= link_to "Total of customers by customer category and year",controller: 'queries', action: 'query3' %></li>
                       <li><%= link_to "Yearly Earnings with packages",controller: 'queries', action: 'query4' %></li>
-                      <li><%= link_to "Pay tickets",controller: 'queries', action: 'query5' %></li>
+                      <li><%= link_to "Pay/Cancel tickets",controller: 'queries', action: 'query5' %></li>
                       <li><%= link_to "View Voyages",controller: 'voyages', action: 'index' %></li>
                     </ul>
                  </li>
@@ -81,10 +79,11 @@
                       <li><%= link_to "Add a Bus",controller: 'buses', action: 'new' %></li>
                       <li><%= link_to "Add a Driver",controller: 'drivers', action: 'new' %></li>
                       <li><%= link_to "Add an Assistant",controller: 'assistants', action: 'new' %></li>
-                      <li><%= link_to "Delete a Bus",controller: 'queries', action: 'query6' %></li>
-                      <li><%= link_to "Delete a Driver",controller: 'queries', action: 'query7' %></li>
-                      <li><%= link_to "Delete an Assistant",controller: 'queries', action: 'query8' %></li>
+                      <li><%= link_to "Edit a Bus",controller: 'buses', action: 'index' %></li>
+                      <li><%= link_to "Edit a Driver",controller: 'drivers', action: 'index' %></li>
+                      <li><%= link_to "Edit an Assistant",controller: 'assistants', action: 'index' %></li>
                       <li><%= link_to "Add a new admin",controller: 'queries', action: 'query9' %></li>
+                      <li><%= link_to "View all Users",controller: 'queries', action: 'view_users' %></li>
                     </ul>
                  </li>
                <%end%>

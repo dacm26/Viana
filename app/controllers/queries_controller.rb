@@ -51,13 +51,28 @@ class QueriesController < ApplicationController
     end
   end
   def query6
+    @buses=Bus.all
   end
   def query7
+    @drivers=Driver.all
   end
   def query8
+    @assistants=Assistant.all
   end
   def query9
+    @users=User.all.where(admin: false)
   end
+  
+  def view_users
+    @users=User.all
+  end
+  
+  def make_admin
+    user=User.find(params[:id])
+    user.admin=true
+    user.save
+  end
+  
   def payaticket
     ticketbill=Ticketbill.find(params[:id])
     ticketbill.paid=true

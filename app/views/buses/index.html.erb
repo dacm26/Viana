@@ -1,13 +1,16 @@
-<h1>Listing buses</h1>
+<br>
+<br>
+<br>
 
-<table>
+<div lass="container">
+  <div class="row centered">
+	  <div class="col-lg-10 col-lg-offset-1">
+      <div class="table-responsive">
+      <table class="table table-borderless">
   <thead>
     <tr>
-      <th>Plate</th>
-      <th>Capacity</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="danger">Plate</th>
+      <th class="danger">Capacity</th>
     </tr>
   </thead>
 
@@ -16,9 +19,7 @@
       <tr>
         <td><%= bus.plate %></td>
         <td><%= bus.capacity %></td>
-        <td><%= link_to 'Show', bus %></td>
-        <td><%= link_to 'Edit', edit_bus_path(bus) %></td>
-        <td><%= link_to 'Destroy', bus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="btn btn-success"><%= link_to 'Edit', edit_bus_path(bus) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,3 @@
 
 <br>
 
-<%= link_to 'New Bus', new_bus_path %>

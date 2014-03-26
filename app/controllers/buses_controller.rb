@@ -11,6 +11,7 @@ class BusesController < ApplicationController
   # GET /buses/1
   # GET /buses/1.json
   def show
+    redirect_to controller: 'home',action: 'index'
   end
 
   # GET /buses/new
@@ -21,6 +22,7 @@ class BusesController < ApplicationController
 
   # GET /buses/1/edit
   def edit
+     render layout: 'spot'
   end
 
   # POST /buses

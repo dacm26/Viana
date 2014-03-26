@@ -4,6 +4,8 @@ class Ticketbill < ActiveRecord::Base
   has_one :itinerary
   before_save :make_voyage
   attr_accessible :ticket_id, :id_customer, :itinerary_id, :departure_date
+  validates :itinerary_id, :numericality => true
+  validates :ticket_id, :numericality => true
   def make_voyage
     if  self.new_record?
     voyages=Voyage.all

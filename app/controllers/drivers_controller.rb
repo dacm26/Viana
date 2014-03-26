@@ -11,6 +11,7 @@ class DriversController < ApplicationController
   # GET /drivers/1
   # GET /drivers/1.json
   def show
+    redirect_to controller: 'home',action: 'index'
   end
 
   # GET /drivers/new
@@ -21,6 +22,8 @@ class DriversController < ApplicationController
 
   # GET /drivers/1/edit
   def edit
+        render layout: 'spot'
+
   end
 
   # POST /drivers

@@ -29,7 +29,7 @@
         <%else%>
           <td>No</td>
           <td class="btn btn-success"><%= link_to 'Pay Ticket', pay_a_ticket_path(ticketbill.id) %></td>
-          <td class="btn btn-danger"><%= link_to 'Cancel', ticketbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="btn btn-danger"><%=link_to 'Cancel Ticket', ticketbill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
         
       </tr>

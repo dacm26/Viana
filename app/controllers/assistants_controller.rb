@@ -11,6 +11,7 @@ class AssistantsController < ApplicationController
   # GET /assistants/1
   # GET /assistants/1.json
   def show
+    redirect_to controller: 'home',action: 'index'
   end
 
   # GET /assistants/new
@@ -21,6 +22,7 @@ class AssistantsController < ApplicationController
 
   # GET /assistants/1/edit
   def edit
+        render layout: 'spot'
   end
 
   # POST /assistants

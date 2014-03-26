@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+
+<div lass="container">
+  <div class="row centered">
+	  <div class="col-lg-10 col-lg-offset-1">
+      <div class="table-responsive">
+      <table class="table table-borderless">
+  <thead>
+    <tr>
+      <th class="danger">Email</th>
+      <th class="danger">Name</th>
+      <th class="danger">Mobike</th>
+      <th class="danger">Address</th>
+      <th class="danger">Admin?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.name %></td>
+        <td><%= user.mobile %></td>
+        <td><%= user.address %></td>
+        <%if user.admin?%>
+          <td>Yes</td>
+        <%else%>
+          <td>No</td>
+        <%end%>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+    </div>
+  </div><!-- row -->
+</div>
+</div>
