@@ -1,5 +1,10 @@
 <br>
 <br>
+<p>
+  Download:
+  <%= link_to "CSV", tickets_path(format: "csv") %> |
+  <%= link_to "Excel", tickets_path(format: "xls") %>
+</p>
 <div lass="container">
 <div class="row centered">
 <div class="col-lg-8 col-lg-offset-2">
@@ -24,9 +29,6 @@
         <td><%= City.find(ticket.origin_city).name %></td>
         <td><%= City.find(ticket.destiny_city).name %></td>
         <td>$<%= ticket.price %></td>
-        <!--<td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>

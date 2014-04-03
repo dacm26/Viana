@@ -1,11 +1,16 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  layout 'spot'
 
   # GET /tickets
   # GET /tickets.json
   def index
     @tickets = Ticket.all
-    render layout: 'spot'
+    respond_to do |format|
+      format.html
+      format.csv { send_data @tickets.to_csv }
+      format.xls { send_data @tickets.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /tickets/1
